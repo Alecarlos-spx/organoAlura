@@ -1,0 +1,45 @@
+
+/* 
+.footer {
+    background-color: #6278F7;
+    color: #FFF;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+    background-image: url(/../imagens/fundo.png);
+
+}
+.footer .sites {
+    margin-left: 32px;
+}
+
+.footer .sites img {
+    display: inline-block;
+    padding-right: 32px;
+}
+
+.footer .criado h2{
+    color: #fff;
+} */
+
+
+.footer {
+    background: #6278F7;
+    color: #FFF;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-right: 32px;
+}
+
+.footer ul li:last-child {
+    margin-right: 0;
+}
+
