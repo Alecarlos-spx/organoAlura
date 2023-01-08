@@ -8,7 +8,6 @@ function App() {
   const [colaboradores, setColaboradores] = useState([]);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    debugger
     setColaboradores([...colaboradores, colaborador]);
    // console.log(`Colaborador => ${JSON.stringify(colaborador)}`);
   };
