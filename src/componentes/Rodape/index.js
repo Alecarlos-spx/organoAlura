@@ -1,8 +1,11 @@
 import './Rodape.css'
 
 const Rodape = () => {
+    const css = {
+        backgroundImage: 'url(/imagens/fundo.png)'
+    }
     return (
-        <footer className="footer">
+        <footer className="footer" style={css}>
             <section>
                 <ul>
                     <li>
