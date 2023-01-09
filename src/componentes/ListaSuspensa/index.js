@@ -4,7 +4,6 @@ const listaSuspensa = (props) => {
 
     const aoAlterado = (evento) => {
         props.aoAlterado(evento.target.value);
-        console.log(evento.target.value);
     }
 
     return (
