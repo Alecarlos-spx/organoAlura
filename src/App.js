@@ -11,37 +11,37 @@ function App() {
     // console.log(`Colaborador => ${JSON.stringify(colaborador)}`);
   };
   
-  const times = [
+  const [times, setTimes] = useState ([
     {nome: 'Programação', 
-    corSecundaria: '#D9F7E9', 
-    corPrimaria: '#57C278'
+    cor: '#D9F7E9', 
+    
  
     },
     {nome: 'Front-End', 
-      corSecundaria: '#E8F8FF', 
-      corPrimaria: '#82CFFA'
+      cor: '#E8F8FF', 
+      
     },
     {nome: 'Data-Science', 
-      corSecundaria: '#F0F8E2', 
-      corPrimaria: '#A6D157'
+      cor: '#F0F8E2', 
+      
   },
     {nome: 'Dev-Ops', 
-      corSecundaria: '#FDE7E8', 
-      corPrimaria: '#E06B69'
+      cor: '#FDE7E8', 
+      
   },
     {nome: 'UX e Design', 
-      corSecundaria: '#FAE9F5', 
-      corPrimaria: '#DB6EBF'
+      cor: '#FAE9F5', 
+      
   },
     {nome: 'Mobile', 
-      corSecundaria: '#FFF5D9', 
-      corPrimaria: '#FFBA05'
+      cor: '#FFF5D9', 
+      
   },
     {nome: 'Inovação e Gestão', 
-      corSecundaria: '#FFEEDF', 
-      corPrimaria: '#FF8A29'
+      cor: '#FFEEDF', 
+      
   }
-  ]
+  ]);
 
   const inicial = [
     {
@@ -192,7 +192,21 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState(inicial);
 
+function deletarColaborador() {
+  console.log('deletando colaborador');
+}
 
+function mudarCorDoTime(cor, nome)
+{
+  setTimes(times.map(time => {
+    if (time.nome === nome)
+      {time.cor = cor;}
+    return time;
+  }));
+}
+const aoDeletar = () => {
+
+};
   return (
     <div className="App">
       <Banner/>
@@ -200,11 +214,13 @@ function App() {
       <section className="times">
       <h1>Minha organização</h1>
       {times.map(times => 
-        <Time key={times.nome} 
+        <Time 
+          key={times.nome} 
           nome={times.nome}
-          corSecundaria={times.corSecundaria}
-          corPrimaria={times.corPrimaria}
+          cor={times.cor}
           colaboradores={colaboradores.filter(colaborador => colaborador.time === times.nome)}
+          aoDeletar={deletarColaborador}
+          mudarCor={mudarCorDoTime}
         />
       )}
       </section>
